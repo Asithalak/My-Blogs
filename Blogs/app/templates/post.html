@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} - My Personal Blog{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <article class="post-full">
+            <h1 class="post-title mb-3">{{ post.title }}</h1>
+            <div class="post-meta text-muted mb-4">
+                By {{ post.author }} on {{ post.created_at.strftime('%B %d, %Y at %I:%M %p') }}
+                {% if post.updated_at != post.created_at %}
+                    <br><small>Last updated: {{ post.updated_at.strftime('%B %d, %Y at %I:%M %p') }}</small>
+                {% endif %}
+            </div>
+
+            <div class="post-content">
+                {{ post.content | markdown | safe }}
+            </div>
+
+            <hr class="my-4">
+
+            <div class="post-actions">
+                <a href="{{ url_for('main.edit', id=post.id) }}" class="btn btn-warning">Edit Post</a>
+                <form method="POST" action="{{ url_for('main.delete', id=post.id) }}" style="display: inline;"
+                      onsubmit="return confirm('Are you sure you want to delete this post?');">
+                    <button type="submit" class="btn btn-danger">Delete Post</button>
+                </form>
+                <a href="{{ url_for('main.index') }}" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </article>
+    </div>
+</div>
+{% endblock %}

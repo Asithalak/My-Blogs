@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Create New Post - My Personal Blog{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="mb-4">Create New Post</h1>
+
+        <form method="POST" action="{{ url_for('main.create') }}">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+                {{ form.title.label(class="form-label") }}
+                {{ form.title(class="form-control" + (" is-invalid" if form.title.errors else "")) }}
+                {% if form.title.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.title.errors %}{{ error }}{% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.content.label(class="form-label") }}
+                <small class="text-muted">Supports Markdown formatting</small>
+                {{ form.content(class="form-control font-monospace" + (" is-invalid" if form.content.errors else "")) }}
+                {% if form.content.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.content.errors %}{{ error }}{% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.author.label(class="form-label") }}
+                {{ form.author(class="form-control", placeholder="Leave blank for 'Anonymous'") }}
+            </div>
+
+            <div class="mb-3 form-check">
+                {{ form.published(class="form-check-input") }}
+                {{ form.published.label(class="form-check-label") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.submit(class="btn btn-primary") }}
+                <a href="{{ url_for('main.index') }}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <strong>Markdown Quick Reference</strong>
+            </div>
+            <div class="card-body">
+                <p><code># Heading 1</code> - Large heading</p>
+                <p><code>## Heading 2</code> - Medium heading</p>
+                <p><code>**bold text**</code> - Bold text</p>
+                <p><code>*italic text*</code> - Italic text</p>
+                <p><code>- Item</code> - Bullet list</p>
+                <p><code>[Link text](url)</code> - Hyperlink</p>
+                <p><code>```code```</code> - Code block</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
