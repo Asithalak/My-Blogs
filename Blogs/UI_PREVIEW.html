@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog UI Preview - All Pages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .page-section {
+            background: white;
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .page-title {
+            color: #0066cc;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .screenshot {
+            border: 2px solid #ddd;
+            padding: 15px;
+            background: #fff;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .url-box {
+            background: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #0066cc;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .feature-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .feature-list li {
+            margin: 8px 0;
+        }
+        .navbar-preview {
+            background: #343a40;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .navbar-preview a {
+            color: #ffc107;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .post-card {
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            background: #fff;
+        }
+        .post-card h3 {
+            color: #0066cc;
+            margin-top: 0;
+        }
+        .post-meta {
+            color: #6c757d;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .form-preview {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .form-field {
+            margin: 15px 0;
+        }
+        .form-field label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-danger {
+            background: #dc3545;
+        }
+        .btn-secondary {
+            background: #6c757d;
+        }
+        .admin-panel {
+            background: #fff;
+            border: 2px solid #dee2e6;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .table-preview {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .table-preview th,
+        .table-preview td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        .table-preview th {
+            background: #e9ecef;
+            font-weight: bold;
+        }
+        code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .info-box {
+            background: #d1ecf1;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #17a2b8;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: #343a40;">🌐 Personal Blog - User Interface Preview</h1>
+
+    <div class="info-box">
+        <strong>📍 ඔබේ Blog එක Access කරන්න:</strong><br>
+        Server එක start කරලා browser එකෙන් URLs වලට යන්න.<br>
+        <code>cd d:/My-Blogs/Blogs && source venv/Scripts/activate && python run.py</code>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="page-section">
+        <h2 class="page-title">🧭 Navigation Bar (සියලු pages වල)</h2>
+        <div class="navbar-preview">
+            <strong style="font-size: 20px;">My Blog</strong>
+            <div style="float: right;">
+                <a href="#">Home</a>
+                <a href="#">Create Post</a>
+                <a href="#">Admin</a>
+            </div>
+        </div>
+        <ul class="feature-list">
+            <li>සියලු pages වල top එකේ පෙන්වෙනවා</li>
+            <li>Home, Create Post, Admin links තියෙනවා</li>
+            <li>Mobile-friendly responsive design</li>
+        </ul>
+    </div>
+
+    <!-- Homepage -->
+    <div class="page-section">
+        <h2 class="page-title">🏠 Homepage - සියලු Blog Posts</h2>
+        <div class="url-box">
+            🔗 URL: <strong>http://localhost:5000/</strong>
+        </div>
+
+        <div class="screenshot">
+            <h3 style="margin-top: 0;">Welcome to My Blog</h3>
+
+            <div class="post-card">
+                <h3>Welcome to My Personal Blog!</h3>
+                <div class="post-meta">By Blog Admin on March 17, 2026</div>
+                <p>Thank you for visiting my personal blog. This is my first blog post!
+
+Features
+
+This blog has several great features:
+
+- Markdown Support - Write posts using Markdown syntax
+- Rich Formatting - Use headers, lists, bold, italic, and more...</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+
+            <div class="post-card">
+                <h3>Python Flask: A Powerful Web Framework</h3>
+                <div class="post-meta">By Tech Enthusiast on March 17, 2026</div>
+                <p>Flask is a lightweight and powerful web framework for Python.
+
+Why Flask?
+
+Flask is popular because it's:
+
+- Simple - Easy to learn and use
+- Flexible - You control the components...</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn-secondary" style="padding: 5px 15px; margin: 0 5px;">Previous</button>
+                <button class="btn" style="padding: 5px 15px; margin: 0 5px;">1</button>
+                <button class="btn-secondary" style="padding: 5px 15px; margin: 0 5px;">Next</button>
+            </div>
+        </div>
+
+        <ul class="feature-list">
+            <li>✅ සියලු published posts list එකක් පෙන්වනවා</li>
+            <li>✅ Post title, author, date, excerpt පෙන්වනවා</li>
+            <li>✅ "Read More" button එක click කරලා full post එක බලන්න පුළුවන්</li>
+            <li>✅ Pagination (5 posts per page)</li>
+            <li>✅ Newest posts මුලින් පෙන්වනවා</li>
+        </ul>
+    </div>
+
+    <!-- Single Post Page -->
+    <div class="page-section">
+        <h2 class="page-title">📄 Individual Post Page - Post එකක් බලන්න</h2>
+        <div class="url-box">
+            🔗 URL Pattern: <strong>http://localhost:5000/post/&lt;slug&gt;</strong><br>
+            🔗 Example: <strong>http://localhost:5000/post/welcome-to-my-personal-blog</strong>
+        </div>
+
+        <div class="screenshot">
+            <h1>Welcome to My Personal Blog!</h1>
+            <div class="post-meta">By Blog Admin on March 17, 2026</div>
+            <hr>
+
+            <div style="line-height: 1.8;">
+                <h1>Welcome!</h1>
+                <p>Thank you for visiting my personal blog. This is my first blog post!</p>
+
+                <h2>Features</h2>
+                <p>This blog has several great features:</p>
+                <ul>
+                    <li><strong>Markdown Support</strong> - Write posts using Markdown syntax</li>
+                    <li><strong>Rich Formatting</strong> - Use headers, lists, bold, italic, and more</li>
+                    <li><strong>Easy Management</strong> - Create, edit, and delete posts easily</li>
+                </ul>
+
+                <h2>Code Example</h2>
+                <pre style="background: #f4f4f4; padding: 15px; border-radius: 5px;"><code>def hello_world():
+    print("Hello from my blog!")
+    return "Welcome"</code></pre>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <a href="#" class="btn">Edit Post</a>
+                <button class="btn btn-danger">Delete Post</button>
+            </div>
+        </div>
+
+        <ul class="feature-list">
+            <li>✅ Full post content Markdown rendered HTML ලෙස පෙන්වනවා</li>
+            <li>✅ Post title, author, date display වෙනවා</li>
+            <li>✅ Edit Post button - post එක edit කරන්න</li>
+            <li>✅ Delete Post button - post එක delete කරන්න</li>
+            <li>✅ Markdown formatting - headers, bold, italic, lists, code blocks</li>
+        </ul>
+    </div>
+
+    <!-- Create Post Page -->
+    <div class="page-section">
+        <h2 class="page-title">✍️ Create Post Page - නව Post එකක් හදන්න</h2>
+        <div class="url-box">
+            🔗 URL: <strong>http://localhost:5000/create</strong>
+        </div>
+
+        <div class="screenshot">
+            <h2>Create New Post</h2>
+
+            <div class="form-preview">
+                <div class="form-field">
+                    <label>Title *</label>
+                    <input type="text" placeholder="Enter post title..." value="">
+                </div>
+
+                <div class="form-field">
+                    <label>Content * <small style="color: #6c757d;">(Supports Markdown formatting)</small></label>
+                    <textarea rows="15" placeholder="Write your post content using Markdown..."></textarea>
+                </div>
+
+                <div class="form-field">
+                    <label>Author</label>
+                    <input type="text" placeholder="Your name (optional)" value="">
+                </div>
+
+                <div class="form-field">
+                    <label>
+                        <input type="checkbox" checked> Published
+                    </label>
+                </div>
+
+                <button class="btn">Submit</button>
+            </div>
+        </div>
+
+        <ul class="feature-list">
+            <li>✅ Title field - Post එකේ heading එක</li>
+            <li>✅ Content field - Markdown support තියෙන විශාල text area</li>
+            <li>✅ Author field - ඔබේ නම (optional)</li>
+            <li>✅ Published checkbox - එකවරම publish කරන්නද?</li>
+            <li>✅ CSRF protection - secure forms</li>
+            <li>✅ Validation - required fields validate වෙනවා</li>
+        </ul>
+    </div>
+
+    <!-- Edit Post Page -->
+    <div class="page-section">
+        <h2 class="page-title">✏️ Edit Post Page - Post එකක් Edit කරන්න</h2>
+        <div class="url-box">
+            🔗 URL Pattern: <strong>http://localhost:5000/edit/&lt;id&gt;</strong><br>
+            🔗 Example: <strong>http://localhost:5000/edit/1</strong>
+        </div>
+
+        <div class="screenshot">
+            <h2>Edit Post</h2>
+
+            <div class="form-preview">
+                <div class="form-field">
+                    <label>Title *</label>
+                    <input type="text" value="Welcome to My Personal Blog!">
+                </div>
+
+                <div class="form-field">
+                    <label>Content * <small style="color: #6c757d;">(Supports Markdown formatting)</small></label>
+                    <textarea rows="15"># Welcome!
+
+Thank you for visiting my personal blog...</textarea>
+                </div>
+
+                <div class="form-field">
+                    <label>Author</label>
+                    <input type="text" value="Blog Admin">
+                </div>
+
+                <div class="form-field">
+                    <label>
+                        <input type="checkbox" checked> Published
+                    </label>
+                </div>
+
+                <button class="btn">Update Post</button>
+                <a href="#" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+
+        <ul class="feature-list">
+            <li>✅ Existing post data pre-filled වෙනවා</li>
+            <li>✅ සියලු fields edit කරන්න පුළුවන්</li>
+            <li>✅ Update Post button - changes save කරනවා</li>
+            <li>✅ Cancel button - without saving back යන්න පුළුවන්</li>
+            <li>✅ Title වෙනස් කරොත් slug auto-update වෙනවා</li>
+        </ul>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="page-section">
+        <h2 class="page-title">⚙️ Admin Panel - සියලු Posts Manage කරන්න</h2>
+        <div class="url-box">
+            🔗 URL: <strong>http://localhost:5000/admin</strong>
+        </div>
+
+        <div class="screenshot">
+            <div style="background: #343a40; color: white; padding: 15px; border-radius: 5px 5px 0 0;">
+                <h3 style="margin: 0; color: white;">Blog Admin</h3>
+            </div>
+
+            <div class="admin-panel">
+                <div style="margin-bottom: 20px;">
+                    <strong>Menu:</strong>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px; background: #e9ecef; margin: 5px 0; border-radius: 3px;">📝 Posts</li>
+                    </ul>
+                </div>
+
+                <h3>Posts</h3>
+                <div style="margin-bottom: 15px;">
+                    <input type="text" placeholder="Search..." style="padding: 8px; border: 1px solid #ced4da; border-radius: 4px; margin-right: 10px;">
+                    <button class="btn">Create</button>
+                </div>
+
+                <table class="table-preview">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Published</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Welcome to My Personal Blog!</td>
+                            <td>Blog Admin</td>
+                            <td>✅ Yes</td>
+                            <td>2026-03-17 20:36</td>
+                            <td>
+                                <a href="#" style="color: #007bff;">Edit</a> |
+                                <a href="#" style="color: #dc3545;">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Python Flask: A Powerful Web Framework</td>
+                            <td>Tech Enthusiast</td>
+                            <td>✅ Yes</td>
+                            <td>2026-03-17 20:37</td>
+                            <td>
+                                <a href="#" style="color: #007bff;">Edit</a> |
+                                <a href="#" style="color: #dc3545;">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 15px; color: #6c757d;">
+                    Showing 1 to 2 of 2 records
+                </div>
+            </div>
+        </div>
+
+        <ul class="feature-list">
+            <li>✅ සියලු posts table view එකෙන් පෙන්වනවා</li>
+            <li>✅ Search functionality - posts search කරන්න</li>
+            <li>✅ Filter options - published/unpublished</li>
+            <li>✅ Quick edit/delete links</li>
+            <li>✅ Create new post button</li>
+            <li>✅ Sort by any column</li>
+            <li>✅ Pagination support</li>
+        </ul>
+    </div>
+
+    <!-- Markdown Guide -->
+    <div class="page-section">
+        <h2 class="page-title">📝 Markdown Syntax Guide</h2>
+
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 5px;">
+            <h3>Posts ලියන විට භාවිතා කරන්න පුළුවන් Markdown Syntax:</h3>
+
+            <table style="width: 100%; margin: 15px 0;">
+                <tr style="background: #e9ecef;">
+                    <th style="padding: 10px; text-align: left; border: 1px solid #dee2e6;">Markdown</th>
+                    <th style="padding: 10px; text-align: left; border: 1px solid #dee2e6;">Result</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><code># Heading 1</code></td>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><h1 style="margin: 0;">Heading 1</h1></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><code>## Heading 2</code></td>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><h2 style="margin: 0;">Heading 2</h2></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><code>**bold text**</code></td>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><strong>bold text</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><code>*italic text*</code></td>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><em>italic text</em></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><code>- List item</code></td>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;">• List item</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><code>[Link](url)</code></td>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><a href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><code>`code`</code></td>
+                    <td style="padding: 10px; border: 1px solid #dee2e6;"><code>code</code></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="page-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2 style="color: white; border-bottom: 3px solid white; padding-bottom: 10px;">🎯 Summary - Blog UI Features</h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                <h3 style="margin-top: 0; color: #ffc107;">📄 5 Main Pages:</h3>
+                <ul>
+                    <li>Homepage - Posts list</li>
+                    <li>Single Post - Full post view</li>
+                    <li>Create Post - New post form</li>
+                    <li>Edit Post - Edit form</li>
+                    <li>Admin Panel - Management interface</li>
+                </ul>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                <h3 style="margin-top: 0; color: #ffc107;">✨ Key Features:</h3>
+                <ul>
+                    <li>Responsive Bootstrap design</li>
+                    <li>Markdown support</li>
+                    <li>CRUD operations</li>
+                    <li>Admin panel</li>
+                    <li>Pagination</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Access Instructions -->
+    <div class="page-section" style="background: #d4edda; border: 2px solid #28a745;">
+        <h2 style="color: #155724;">🚀 Blog එක Access කරන්න:</h2>
+
+        <ol style="font-size: 16px; line-height: 2;">
+            <li><strong>Terminal එකෙන්:</strong>
+                <pre style="background: #155724; color: #d4edda; padding: 15px; border-radius: 5px; margin: 10px 0;">cd d:/My-Blogs/Blogs
+source venv/Scripts/activate
+python run.py</pre>
+            </li>
+            <li><strong>Browser එකෙන්:</strong> <code>http://localhost:5000</code> වෙත යන්න</li>
+            <li><strong>Explore කරන්න:</strong> Navigation links භාවිතා කරලා සියලු pages බලන්න!</li>
+        </ol>
+    </div>
+
+    <div style="text-align: center; margin: 30px 0; padding: 20px; background: #343a40; color: white; border-radius: 8px;">
+        <h2 style="margin: 0;">🎉 ඔබේ Personal Blog UI සම්පූර්ණයි!</h2>
+        <p style="margin: 10px 0;">Clean, Professional, හා User-Friendly Interface</p>
+    </div>
+</body>
+</html>
