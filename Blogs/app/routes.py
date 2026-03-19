@@ -1,4 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
+from werkzeug.utils import secure_filename
+import os
 from app import db
 from app.models import Post
 from app.forms import PostForm
@@ -69,3 +71,43 @@ def delete(id):
     db.session.commit()
     flash('Post deleted successfully!', 'success')
     return redirect(url_for('main.index'))
+
+@bp.route('/upload-profile', methods=['POST'])
+def upload_profile():
+    """Upload profile picture"""
+    if 'profile_image' not in request.files:
+        flash('No file selected!', 'danger')
+        return redirect(request.referrer or url_for('main.index'))
+
+    file = request.files['profile_image']
+
+    if file.filename == '':
+        flash('No file selected!', 'danger')
+        return redirect(request.referrer or url_for('main.index'))
+
+    # Check file extension
+    allowed_extensions = {'png', 'jpg', 'jpeg', 'gif'}
+    filename = secure_filename(file.filename)
+    file_ext = filename.rsplit('.', 1)[1].lower() if '.' in filename else ''
+
+    if file_ext not in allowed_extensions:
+        flash('Invalid file type! Please upload PNG, JPG, JPEG, or GIF.', 'danger')
+        return redirect(request.referrer or url_for('main.index'))
+
+    # Save as profile.{ext}
+    upload_folder = os.path.join('app', 'static', 'images')
+    os.makedirs(upload_folder, exist_ok=True)
+
+    # Remove old profile images
+    for ext in allowed_extensions:
+        old_file = os.path.join(upload_folder, f'profile.{ext}')
+        if os.path.exists(old_file):
+            os.remove(old_file)
+
+    # Save new profile image
+    filepath = os.path.join(upload_folder, f'profile.{file_ext}')
+    file.save(filepath)
+
+    flash('Profile picture updated successfully!', 'success')
+    return redirect(request.referrer or url_for('main.index'))
+
