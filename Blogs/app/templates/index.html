@@ -3,6 +3,108 @@
 {% block title %}Home - My Personal Blog{% endblock %}
 
 {% block content %}
+<!-- Today's Schedule Widget -->
+{% if planner %}
+<div class="row mb-4">
+    <div class="col-lg-10 mx-auto">
+        <div class="card shadow-sm" style="border-left: 5px solid #667eea;">
+            <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="bi bi-calendar-check"></i> Today's Schedule - {{ today.strftime('%A, %B %d, %Y') }}
+                    </h5>
+                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#dailyUpdateModal">
+                        <i class="bi bi-pencil"></i> Edit
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <!-- Schedule Timeline -->
+                    <div class="col-md-8">
+                        <h6 class="text-muted mb-3"><i class="bi bi-clock"></i> Schedule:</h6>
+                        {% if planner.time_slots %}
+                            <div class="schedule-timeline">
+                                {% for slot in planner.time_slots %}
+                                <div class="d-flex align-items-center mb-2 p-2 border-start border-3 border-primary bg-light rounded-end">
+                                    <strong class="text-muted" style="min-width: 130px; font-size: 0.9rem;">
+                                        {{ slot.time_range.split('-')[0] }} - {{ slot.time_range.split('-')[1] }}
+                                    </strong>
+                                    <div class="ms-3">
+                                        <span class="badge bg-primary">{{ slot.work_type }}</span>
+                                        <span class="ms-2">{{ slot.task }}</span>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <p class="text-muted small">No schedule planned yet.</p>
+                        {% endif %}
+                    </div>
+
+                    <!-- Priorities & Goals -->
+                    <div class="col-md-4">
+                        <!-- Top Priorities -->
+                        {% if planner.priorities %}
+                        <h6 class="text-muted mb-2"><i class="bi bi-star-fill text-warning"></i> Priorities:</h6>
+                        <ul class="list-unstyled mb-3">
+                            {% for priority in planner.priorities %}
+                            <li class="mb-1">
+                                <i class="bi bi-check-circle{% if priority.completed %}-fill text-success{% else %} text-muted{% endif %}"></i>
+                                <small {% if priority.completed %}style="text-decoration: line-through; color: #6c757d;"{% endif %}>
+                                    {{ priority.task }}
+                                </small>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        <!-- Today's Goal -->
+                        {% if planner.goals %}
+                        <h6 class="text-muted mb-2"><i class="bi bi-flag-fill text-danger"></i> Goal:</h6>
+                        <p class="small bg-light p-2 rounded border-start border-3 border-danger">
+                            {{ planner.goals }}
+                        </p>
+                        {% endif %}
+
+                        <!-- Appointments -->
+                        {% if planner.appointments %}
+                        <h6 class="text-muted mb-2"><i class="bi bi-people-fill text-info"></i> Meetings:</h6>
+                        <ul class="list-unstyled">
+                            {% for appt in planner.appointments %}
+                            <li class="small mb-1">
+                                <i class="bi bi-clock"></i> {{ appt.time }} - {{ appt.title }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                {% if planner.notes %}
+                <hr>
+                <h6 class="text-muted mb-2"><i class="bi bi-journal-text"></i> Notes:</h6>
+                <p class="small bg-light p-3 rounded">{{ planner.notes }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="row mb-4">
+    <div class="col-lg-10 mx-auto">
+        <div class="alert alert-info shadow-sm">
+            <h5><i class="bi bi-calendar-plus"></i> Plan Your Day!</h5>
+            <p class="mb-2">No schedule set for today. Click below to create your daily plan.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dailyUpdateModal">
+                <i class="bi bi-plus-circle"></i> Create Today's Schedule
+            </button>
+        </div>
+    </div>
+</div>
+{% endif %}
+
 <div class="row">
     <div class="col-lg-8 mx-auto">
         <h1 class="mb-4">Welcome to My Blog</h1>

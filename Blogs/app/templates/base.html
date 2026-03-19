@@ -151,9 +151,290 @@
             transform: scale(1.05);
         }
 
+        /* Daily Updates Ticker Styles */
+        .daily-ticker {
+            background: linear-gradient(90deg, #ffd89b 0%, #19547b 100%);
+            padding: 10px 0;
+            overflow: hidden;
+            border-bottom: 3px solid #f39c12;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticker-wrapper {
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .ticker-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            white-space: nowrap;
+            animation: scroll-left 30s linear infinite;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .ticker-content i {
+            font-size: 1.3rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .ticker-text {
+            display: inline-flex;
+            gap: 50px;
+        }
+
+        /* Update List Styles */
+        .update-item {
+            border-left: 4px solid #007bff;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .update-item:hover {
+            transform: translateX(5px);
+            background: #e9ecef;
+        }
+
+        .update-time {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        /* Schedule Planner Styles */
+        .time-slot {
+            display: flex;
+            border-bottom: 1px solid #e9ecef;
+            min-height: 80px;
+            transition: background 0.2s;
+        }
+
+        .time-slot:hover {
+            background: #f8f9fa;
+        }
+
+        .time-label {
+            width: 100px;
+            padding: 15px;
+            font-weight: 600;
+            color: #6c757d;
+            border-right: 2px solid #dee2e6;
+            flex-shrink: 0;
+        }
+
+        .timeslot-content {
+            flex-grow: 1;
+            padding: 10px 15px;
+            position: relative;
+        }
+
+        .task-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .task-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .task-card.coding {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .task-card.design {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .task-card.meeting {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+        }
+
+        .task-card.research {
+            background:linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .task-card.testing {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .task-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .task-duration {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .empty-slot {
+            color: #adb5bd;
+            font-style: italic;
+            padding: 15px;
+            text-align: center;
+            display: none;
+        }
+
+        .time-slot:hover .empty-slot {
+            display: block;
+        }
+
         /* Make navbar stick better */
         body {
             padding-top: 0;
+        }
+
+        /* Daily Planner Styles */
+        .planner-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .planner-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .planner-date-input {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #667eea;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 10px 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .planner-section {
+            margin-bottom: 30px;
+        }
+
+        .planner-section-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .time-slot-row {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.2s;
+        }
+
+        .time-slot-row:hover {
+            background: #f8f9fa;
+        }
+
+        .time-slot-label {
+            width: 130px;
+            font-weight: 600;
+            color: #495057;
+            flex-shrink: 0;
+        }
+
+        .time-slot-input {
+            flex-grow: 1;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 0.95rem;
+        }
+
+        .time-slot-type {
+            width: 150px;
+            margin-left: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 8px;
+            font-size: 0.9rem;
+        }
+
+        .priority-item, .appointment-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .priority-checkbox, .appointment-checkbox {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .planner-textarea {
+            width: 100%;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 0.95rem;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .planner-textarea:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .save-planner-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+
+        .save-planner-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
     </style>
 </head>
@@ -215,10 +496,30 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/admin">Admin Panel</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#dailyUpdateModal">
+                            <i class="bi bi-megaphone"></i> Daily Update
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.notification_settings') }}">
+                            <i class="bi bi-bell"></i> Notifications
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Daily Updates Ticker -->
+    <div class="daily-ticker" id="daily-ticker">
+        <div class="ticker-wrapper">
+            <div class="ticker-content" id="ticker-content">
+                <i class="bi bi-megaphone-fill"></i>
+                <span class="ticker-text">Loading daily updates...</span>
+            </div>
+        </div>
+    </div>
 
     <main class="container my-5">
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -240,6 +541,106 @@
             <p class="mb-0">&copy; 2026 My Personal Blog. Built with Flask.</p>
         </div>
     </footer>
+
+    <!-- Daily Schedule Planner Modal -->
+    <div class="modal fade" id="dailyUpdateModal" tabindex="-1" aria-labelledby="dailyUpdateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <h4 class="mb-0 text-white">
+                        <i class="bi bi-calendar-week"></i> Daily Schedule Planner
+                    </h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4" style="background: #f5f7fa;">
+                    <div class="planner-container">
+                        <!-- Date Selection -->
+                        <div class="planner-header">
+                            <input type="date" id="planner-date" class="planner-date-input">
+                        </div>
+
+                        <!-- Today's Schedule -->
+                        <div class="planner-section">
+                            <div class="planner-section-title">
+                                <i class="bi bi-clock"></i> Today's Schedule
+                            </div>
+                            <div id="schedule-slots">
+                                <!-- Time slots will be generated here -->
+                            </div>
+                        </div>
+
+                        <!-- Top Priorities -->
+                        <div class="planner-section">
+                            <div class="planner-section-title">
+                                <i class="bi bi-star-fill"></i> Top Priorities
+                            </div>
+                            <div id="priorities-list">
+                                <div class="priority-item">
+                                    <input type="checkbox" class="priority-checkbox" data-idx="0">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Priority 1..." data-idx="0">
+                                </div>
+                                <div class="priority-item">
+                                    <input type="checkbox" class="priority-checkbox" data-idx="1">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Priority 2..." data-idx="1">
+                                </div>
+                                <div class="priority-item">
+                                    <input type="checkbox" class="priority-checkbox" data-idx="2">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Priority 3..." data-idx="2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Today's Goal -->
+                        <div class="planner-section">
+                            <div class="planner-section-title">
+                                <i class="bi bi-flag-fill"></i> Today's Goal
+                            </div>
+                            <textarea id="today-goals" class="planner-textarea" placeholder="What do you want to accomplish today?"></textarea>
+                        </div>
+
+                        <!-- Appointments -->
+                        <div class="planner-section">
+                            <div class="planner-section-title">
+                                <i class="bi bi-people-fill"></i> Appointments
+                            </div>
+                            <div id="appointments-list">
+                                <div class="appointment-item">
+                                    <input type="checkbox" class="appointment-checkbox" data-idx="0">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Appointment title..." data-idx="0" style="flex: 1;">
+                                    <input type="time" class="form-control form-control-sm ms-2" data-idx="0" style="width: 120px;">
+                                </div>
+                                <div class="appointment-item">
+                                    <input type="checkbox" class="appointment-checkbox" data-idx="1">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Appointment title..." data-idx="1" style="flex: 1;">
+                                    <input type="time" class="form-control form-control-sm ms-2" data-idx="1" style="width: 120px;">
+                                </div>
+                                <div class="appointment-item">
+                                    <input type="checkbox" class="appointment-checkbox" data-idx="2">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Appointment title..." data-idx="2" style="flex: 1;">
+                                    <input type="time" class="form-control form-control-sm ms-2" data-idx="2" style="width: 120px;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="planner-section">
+                            <div class="planner-section-title">
+                                <i class="bi bi-journal-text"></i> Notes
+                            </div>
+                            <textarea id="today-notes" class="planner-textarea" placeholder="Additional notes for today..."></textarea>
+                        </div>
+
+                        <!-- Save Button -->
+                        <div class="text-center mt-4">
+                            <button class="save-planner-btn" onclick="savePlanner()">
+                                <i class="bi bi-save"></i> Save Daily Plan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -294,6 +695,366 @@
             loadProfileImage();
             updateClock();
             setInterval(updateClock, 1000);
+            loadDailyUpdates();
+            initializePlanner();
+        });
+
+        // Initialize Daily Planner
+        function initializePlanner() {
+            // Set today's date
+            const today = new Date().toISOString().split('T')[0];
+            const dateInput = document.getElementById('planner-date');
+            if (dateInput) {
+                dateInput.value = today;
+                dateInput.addEventListener('change', function() {
+                    loadPlannerData(this.value);
+                });
+            }
+
+            // Generate time slots
+            generateTimeSlots();
+
+            // Load today's data when modal opens
+            const modal = document.getElementById('dailyUpdateModal');
+            if (modal) {
+                modal.addEventListener('shown.bs.modal', function() {
+                    loadPlannerData(dateInput.value);
+                });
+            }
+        }
+
+        // Generate Time Slots (6 AM to 9 PM)
+        function generateTimeSlots() {
+            const container = document.getElementById('schedule-slots');
+            if (!container) return;
+
+            const timeSlots = [
+                '06:00-07:00', '07:00-08:00', '08:00-09:00', '09:00-10:00',
+                '10:00-11:00', '11:00-12:00', '12:00-13:00', '13:00-14:00',
+                '14:00-15:00', '15:00-16:00', '16:00-17:00', '17:00-18:00',
+                '18:00-19:00', '19:00-20:00', '20:00-21:00'
+            ];
+
+            let html = '';
+            timeSlots.forEach((slot, idx) => {
+                const startHour = parseInt(slot.split(':')[0]);
+                let displayTime = slot;
+
+                // Convert to 12-hour format with AM/PM
+                if (startHour < 12) {
+                    displayTime = slot.replace(/-\d+:/, ' - ' + (startHour + 1) + ':') + ' AM';
+                } else {
+                    const start12 = startHour === 12 ? 12 : startHour - 12;
+                    const end12 = startHour + 1 === 12 ? 12 : (startHour + 1) - 12;
+                    displayTime = start12 + ':00 - ' + end12 + ':00 PM';
+                }
+
+                html += `
+                    <div class="time-slot-row">
+                        <div class="time-slot-label">${displayTime}</div>
+                        <input type="text"
+                               class="time-slot-input"
+                               placeholder="Task..."
+                               data-time="${slot}">
+                        <select class="time-slot-type" data-time="${slot}">
+                            <option value="">Type...</option>
+                            <option value="Coding">💻 Coding</option>
+                            <option value="Design">🎨 Design</option>
+                            <option value="Meeting">👥 Meeting</option>
+                            <option value="Research">📚 Research</option>
+                            <option value="Testing">🧪 Testing</option>
+                            <option value="Documentation">📝 Documentation</option>
+                            <option value="Break">☕ Break</option>
+                            <option value="Exercise">🏃 Exercise</option>
+                            <option value="Learning">🎓 Learning</option>
+                        </select>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Load Planner Data for a specific date
+        function loadPlannerData(dateStr) {
+            fetch(`{{ url_for('main.get_planner', date_str='DATE') }}`.replace('DATE', dateStr))
+                .then(response => response.json())
+                .then(data => {
+                    // Load time slots
+                    document.querySelectorAll('.time-slot-input').forEach(input => {
+                        input.value = '';
+                        const select = document.querySelector(`.time-slot-type[data-time="${input.dataset.time}"]`);
+                        if (select) select.value = '';
+                    });
+
+                    data.time_slots.forEach(slot => {
+                        const input = document.querySelector(`.time-slot-input[data-time="${slot.time_range}"]`);
+                        const select = document.querySelector(`.time-slot-type[data-time="${slot.time_range}"]`);
+                        if (input) input.value = slot.task;
+                        if (select) select.value = slot.work_type;
+                    });
+
+                    // Load priorities
+                    document.querySelectorAll('#priorities-list input[type="text"]').forEach((input, idx) => {
+                        const priority = data.priorities[idx];
+                        if (priority) {
+                            input.value = priority.task;
+                            const checkbox = document.querySelector(`.priority-checkbox[data-idx="${idx}"]`);
+                            if (checkbox) checkbox.checked = priority.completed;
+                        } else {
+                            input.value = '';
+                            const checkbox = document.querySelector(`.priority-checkbox[data-idx="${idx}"]`);
+                            if (checkbox) checkbox.checked = false;
+                        }
+                    });
+
+                    // Load appointments
+                    document.querySelectorAll('#appointments-list input[type="text"]').forEach((input, idx) => {
+                        const appt = data.appointments[idx];
+                        if (appt) {
+                            input.value = appt.title;
+                            const timeInput = document.querySelector(`#appointments-list input[type="time"][data-idx="${idx}"]`);
+                            const checkbox = document.querySelector(`.appointment-checkbox[data-idx="${idx}"]`);
+                            if (timeInput) timeInput.value = appt.time || '';
+                            if (checkbox) checkbox.checked = appt.completed;
+                        } else {
+                            input.value = '';
+                            const timeInput = document.querySelector(`#appointments-list input[type="time"][data-idx="${idx}"]`);
+                            const checkbox = document.querySelector(`.appointment-checkbox[data-idx="${idx}"]`);
+                            if (timeInput) timeInput.value = '';
+                            if (checkbox) checkbox.checked = false;
+                        }
+                    });
+
+                   // Load goals and notes
+                    document.getElementById('today-goals').value = data.goals || '';
+                    document.getElementById('today-notes').value = data.notes || '';
+                })
+                .catch(error => {
+                    console.error('Error loading planner:', error);
+                });
+        }
+
+        // Save Planner Data
+        function savePlanner() {
+            const dateStr = document.getElementById('planner-date').value;
+
+            // Collect time slots
+            const timeSlots = [];
+            document.querySelectorAll('.time-slot-input').forEach(input => {
+                const task = input.value.trim();
+                if (task) {
+                    const select = document.querySelector(`.time-slot-type[data-time="${input.dataset.time}"]`);
+                    timeSlots.push({
+                        time_range: input.dataset.time,
+                        task: task,
+                        work_type: select ? select.value : 'General'
+                    });
+                }
+            });
+
+            // Collect priorities
+            const priorities = [];
+            document.querySelectorAll('#priorities-list input[type="text"]').forEach((input, idx) => {
+                const task = input.value.trim();
+                if (task) {
+                    const checkbox = document.querySelector(`.priority-checkbox[data-idx="${idx}"]`);
+                    priorities.push({
+                        task: task,
+                        completed: checkbox ? checkbox.checked : false
+                    });
+                }
+            });
+
+            // Collect appointments
+            const appointments = [];
+            document.querySelectorAll('#appointments-list input[type="text"]').forEach((input, idx) => {
+                const title = input.value.trim();
+                if (title) {
+                    const timeInput = document.querySelector(`#appointments-list input[type="time"][data-idx="${idx}"]`);
+                    const checkbox = document.querySelector(`.appointment-checkbox[data-idx="${idx}"]`);
+                    appointments.push({
+                        title: title,
+                        time: timeInput ? timeInput.value : '',
+                        completed: checkbox ? checkbox.checked : false
+                    });
+                }
+            });
+
+            // Collect goals and notes
+            const goals = document.getElementById('today-goals').value;
+            const notes = document.getElementById('today-notes').value;
+
+            // Send to server
+            fetch('{{ url_for("main.save_planner") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    date: dateStr,
+                    time_slots: timeSlots,
+                    priorities: priorities,
+                    appointments: appointments,
+                    goals: goals,
+                    notes: notes
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('✅ Daily plan saved successfully!');
+                    // Reload homepage to show updated schedule
+                    if (dateStr === new Date().toISOString().split('T')[0]) {
+                        location.reload();
+                    }
+                } else {
+                    alert('❌ Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error saving planner:', error);
+                alert('❌ Error saving planner. Please try again.');
+            });
+        }
+
+        // Update modal date/time
+        setInterval(function() {
+            const now = new Date();
+            const modalDate = document.getElementById('modal-date');
+            const modalTime = document.getElementById('modal-time');
+            if (modalDate) {
+                modalDate.textContent = now.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+            }
+            if (modalTime) {
+                modalTime.textContent = now.toLocaleTimeString('en-US', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            }
+        }, 1000);
+
+        // Generate Daily Schedule View
+        function generateSchedule(updates) {
+            const scheduleContainer = document.getElementById('schedule-container');
+            const scheduleDate = document.getElementById('schedule-date');
+
+            const now = new Date();
+            scheduleDate.textContent = now.toLocaleDateString('en-US', {
+                weekday: 'long',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Time slots from 8 AM to 8 PM
+            const timeSlots = [
+                '08:00 AM', '09:00 AM', '10:00 AM', '11:00 AM',
+                '12:00 PM', '01:00 PM', '02:00 PM', '03:00 PM',
+                '04:00 PM', '05:00 PM', '06:00 PM', '07:00 PM', '08:00 PM'
+            ];
+
+            let scheduleHTML = '';
+
+            timeSlots.forEach(time => {
+                const tasksInSlot = getTasksForTimeSlot(time, updates);
+
+                scheduleHTML += `
+                    <div class="time-slot">
+                        <div class="time-label">${time}</div>
+                        <div class="time-slot-content">
+                            ${tasksInSlot.length > 0 ?
+                                tasksInSlot.map(task => `
+                                    <div class="task-card ${task.work_type.toLowerCase().replace(' ', '')}">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div class="flex-grow-1">
+                                                <div class="task-title">${escapeHtml(task.message)}</div>
+                                                <div class="task-duration">
+                                                    <i class="bi bi-clock"></i> ${task.duration_hours}h
+                                                    <span class="ms-2"><i class="bi bi-tag"></i> ${task.work_type}</span>
+                                                    <span class="ms-2"><i class="bi bi-clock-history"></i> ${task.time_ago}</span>
+                                                </div>
+                                            </div>
+                                            <form action="{{ url_for('main.delete_daily_update', id=0) }}".replace('/0', '/${task.id}')
+                                                  method="POST" style="display: inline;"
+                                                  onsubmit="return confirm('Delete this task?')">
+                                                <button type="submit" class="btn btn-sm btn-light opacity-75">
+                                                    <i class="bi bi-x-lg"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                `).join('') :
+                                '<div class="empty-slot">+ Click to add task</div>'
+                            }
+                        </div>
+                    </div>
+                `;
+            });
+
+            scheduleContainer.innerHTML = scheduleHTML;
+        }
+
+        // Get tasks for specific time slot (approximate)
+        function getTasksForTimeSlot(timeSlot, updates) {
+            // For now, distribute tasks across the day
+            // In a more advanced version, you could store actual start times
+            return updates.filter((u, index) => {
+                const slotHour = parseInt(timeSlot.split(':')[0]);
+                const isPM = timeSlot.includes('PM');
+                const hour24 = isPM && slotHour !== 12 ? slotHour + 12 : slotHour;
+
+                // Simple distribution: show recent tasks in recent hours
+                const taskHour = new Date(u.created_at).getHours();
+                return Math.abs(taskHour - hour24) < 2; // Show if within 2 hours
+            });
+        }
+
+        // Navigation functions
+        function previousDay() {
+            alert('Previous day view - Coming soon!');
+        }
+
+        function nextDay() {
+            alert('Next day view - Coming soon!');
+        }
+
+        function today() {
+            loadDailyUpdates();
+        }
+
+        // Add note function
+        function addNote() {
+            const noteInput = document.getElementById('new-note');
+            const noteText = noteInput.value.trim();
+
+            if (!noteText) return;
+
+            const notesList = document.getElementById('notes-list');
+            const noteId = 'note' + Date.now();
+
+            const noteHTML = `
+                <div class="form-check small mb-2">
+                    <input class="form-check-input" type="checkbox" id="${noteId}">
+                    <label class="form-check-label" for="${noteId}">
+                        ${escapeHtml(noteText)}
+                    </label>
+                </div>
+            `;
+
+            notesList.insertAdjacentHTML('beforeend', noteHTML);
+            noteInput.value = '';
+        }
+
+        // Enter key to add note
+        document.getElementById('new-note')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                addNote();
+            }
         });
 
         // Upload Profile Image
@@ -327,6 +1088,183 @@
                 // Submit form
                 form.submit();
             }
+        }
+
+        // Load Daily Updates
+        function loadDailyUpdates() {
+            fetch("{{ url_for('main.get_daily_updates') }}")
+                .then(response => response.json())
+                .then(data => {
+                    updateTicker(data);
+                    updateList(data);
+                    generateSchedule(data);  // Generate schedule view
+                    loadTodayStats();
+                })
+                .catch(error => {
+                    console.error('Error loading updates:', error);
+                    document.getElementById('ticker-content').innerHTML =
+                        '<i class="bi bi-megaphone-fill"></i><span class="ticker-text">No updates available</span>';
+                });
+        }
+
+        // Update Ticker Banner
+        function updateTicker(updates) {
+            const tickerContent = document.getElementById('ticker-content');
+
+            if (updates.length === 0) {
+                tickerContent.innerHTML =
+                    '<i class="bi bi-megaphone-fill"></i><span class="ticker-text">No work logged yet today. Click "Daily Update" to start tracking!</span>';
+                return;
+            }
+
+            const messages = updates.map(u => {
+                let msg = u.message;
+                if (u.work_type) msg = `[${u.work_type}] ${msg}`;
+                if (u.duration_hours > 0) msg += ` (${u.duration_hours}h)`;
+                return msg;
+            }).join(' • ');
+
+            tickerContent.innerHTML =
+                `<i class="bi bi-megaphone-fill"></i><span class="ticker-text">${messages}</span>`;
+        }
+
+        // Get work type color
+        function getWorkTypeColor(type) {
+            const colors = {
+                'Coding': 'primary',
+                'Design': 'info',
+                'Meeting': 'warning',
+                'Research': 'success',
+                'Testing': 'danger',
+                'Documentation': 'secondary',
+                'Bug Fix': 'danger',
+                'Planning': 'dark',
+                'Learning': 'info',
+                'Other': 'secondary'
+            };
+            return colors[type] || 'secondary';
+        }
+
+        // Update Updates List in Modal
+        function updateList(updates) {
+            const listContainer = document.getElementById('updates-list');
+
+            if (updates.length === 0) {
+                listContainer.innerHTML = '<p class="text-muted small text-center py-3">No work logged yet.</p>';
+                return;
+            }
+
+            listContainer.innerHTML = updates.map(update => `
+                <div class="border-start border-3 border-${getWorkTypeColor(update.work_type)} p-2 mb-2 bg-light rounded-end small">
+                    <div class="d-flex justify-content-between">
+                        <span class="badge bg-${getWorkTypeColor(update.work_type)} mb-1">
+                            ${escapeHtml(update.work_type || 'General')}
+                        </span>
+                        ${update.duration_hours > 0 ? `
+                        <span class="badge bg-secondary">
+                            ${update.duration_hours}h
+                        </span>
+                        ` : ''}
+                    </div>
+                    <div class="fw-bold" style="font-size: 0.85rem;">${escapeHtml(update.message)}</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">
+                        <i class="bi bi-clock-history"></i> ${escapeHtml(update.time_ago)}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Load Today's Stats
+        function loadTodayStats() {
+            fetch("{{ url_for('main.work_stats') }}")
+                .then(response => response.json())
+                .then(data => {
+                    const statsContainer = document.getElementById('today-stats');
+                    const today = data.today;
+
+                    // Update week badge
+                    const weekToday = document.getElementById('week-today');
+                    if (weekToday) {
+                        weekToday.textContent = `${today.total_hours.toFixed(1)}h`;
+                    }
+
+                    if (today.task_count === 0) {
+                        statsContainer.innerHTML = '<p class="text-muted small">No work logged today yet.</p>';
+                        return;
+                    }
+
+                    let html = `
+                        <div class="row text-center mb-3">
+                            <div class="col-6">
+                                <h2 class="text-primary mb-0">${today.total_hours.toFixed(1)}</h2>
+                                <small class="text-muted">Hours</small>
+                            </div>
+                            <div class="col-6">
+                                <h2 class="text-success mb-0">${today.task_count}</h2>
+                                <small class="text-muted">Tasks</small>
+                            </div>
+                        </div>
+                    `;
+
+                    if (today.by_type.length > 0) {
+                        html += '<hr><small class="text-muted fw-bold">Breakdown:</small>';
+                        today.by_type.forEach(wt => {
+                            const percentage = (wt.hours / today.total_hours * 100).toFixed(0);
+                            html += `
+                                <div class="mb-2 mt-2">
+                                    <div class="d-flex justify-content-between mb-1 small">
+                                        <span class="badge bg-${getWorkTypeColor(wt.type)}">${wt.type}</span>
+                                        <small>${wt.hours.toFixed(1)}h</small>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-${getWorkTypeColor(wt.type)}"
+                                             style="width: ${percentage}%"></div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+
+                    statsContainer.innerHTML = html;
+                })
+                .catch(error => console.error('Error loading stats:', error));
+        }
+
+        // Character counter
+        const messageField = document.getElementById('message');
+        if (messageField) {
+            messageField.addEventListener('input', function() {
+                const count = this.value.length;
+                const counter = document.getElementById('char-count');
+                if (counter) counter.textContent = count;
+            });
+        }
+
+        // Format DateTime
+        function formatDateTime(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Reload updates when modal is opened
+        const dailyModal = document.getElementById('dailyUpdateModal');
+        if (dailyModal) {
+            dailyModal.addEventListener('shown.bs.modal', function() {
+                loadDailyUpdates();
+            });
         }
     </script>
 </body>
