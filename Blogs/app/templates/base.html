@@ -386,6 +386,71 @@
             border-radius: 5px;
             padding: 8px;
             font-size: 0.9rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .time-slot-type:hover {
+            border-color: #667eea;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .time-slot-type:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Style select options with icons */
+        .time-slot-type option {
+            padding: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Color-coded select backgrounds based on selected type */
+        .time-slot-type[data-selected="Coding"] {
+            background: linear-gradient(to right, white 85%, #667eea 85%);
+        }
+
+        .time-slot-type[data-selected="Design"] {
+            background: linear-gradient(to right, white 85%, #f093fb 85%);
+        }
+
+        .time-slot-type[data-selected="Meeting"] {
+            background: linear-gradient(to right, white 85%, #ffd89b 85%);
+        }
+
+        .time-slot-type[data-selected="Research"] {
+            background: linear-gradient(to right, white 85%, #43e97b 85%);
+        }
+
+        .time-slot-type[data-selected="Testing"] {
+            background: linear-gradient(to right, white 85%, #fa709a 85%);
+        }
+
+        .time-slot-type[data-selected="Documentation"] {
+            background: linear-gradient(to right, white 85%, #95a5a6 85%);
+        }
+
+        .time-slot-type[data-selected="Break"] {
+            background: linear-gradient(to right, white 85%, #e67e22 85%);
+        }
+
+        .time-slot-type[data-selected="Exercise"] {
+            background: linear-gradient(to right, white 85%, #e74c3c 85%);
+        }
+
+        .time-slot-type[data-selected="Learning"] {
+            background: linear-gradient(to right, white 85%, #3498db 85%);
+        }
+
+        .time-slot-type[data-selected="Planning"] {
+            background: linear-gradient(to right, white 85%, #34495e 85%);
+        }
+
+        .time-slot-type[data-selected="Bug Fix"] {
+            background: linear-gradient(to right, white 85%, #c0392b 85%);
         }
 
         .priority-item, .appointment-item {
@@ -435,6 +500,337 @@
         .save-planner-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Menu Bar Styles */
+        .planner-menu-bar {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-btn {
+            background: white;
+            border: 2px solid #dee2e6;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .menu-btn:hover {
+            background: #f8f9fa;
+            border-color: #667eea;
+            color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+        }
+
+        .menu-btn-primary:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .menu-btn-success {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            border: none;
+            color: white;
+        }
+
+        .menu-btn-success:hover {
+            background: linear-gradient(135deg, #38f9d7 0%, #43e97b 100%);
+            color: white;
+            box-shadow: 0 4px 16px rgba(67, 233, 123, 0.4);
+        }
+
+        .menu-btn i {
+            font-size: 1.1rem;
+        }
+
+        /* Category Hover Menu */
+        .category-menu-bar {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .category-item {
+            position: relative;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #495057;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .category-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .category-item i {
+            font-size: 1.2rem;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu-custom {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            margin-top: 5px;
+            padding: 8px 0;
+        }
+
+        .category-item:hover .dropdown-menu-custom {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item-custom {
+            padding: 10px 20px;
+            color: #495057;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .dropdown-item-custom:hover {
+            background: #f8f9fa;
+            color: #667eea;
+            padding-left: 25px;
+        }
+
+        .dropdown-item-custom i {
+            font-size: 1rem;
+            width: 20px;
+        }
+
+        .category-badge {
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        /* Navigation Category Dropdowns */
+        .dropdown-menu-categories {
+            min-width: 280px;
+            max-height: 600px;
+            overflow-y: auto;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 12px 0;
+            animation: dropdownSlide 0.3s ease;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-toggle-custom {
+            font-weight: 600;
+            padding: 12px 20px;
+            transition: all 0.2s ease;
+            border-radius: 6px;
+            margin: 2px 8px;
+        }
+
+        .dropdown-submenu .dropdown-toggle-custom:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            padding-left: 25px;
+        }
+
+        .dropdown-submenu .dropdown-toggle-custom i:first-child {
+            width: 24px;
+            text-align: center;
+            margin-right: 8px;
+        }
+
+        .dropdown-submenu .submenu {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            min-width: 220px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            padding: 8px 0;
+            display: none;
+            background: white;
+            margin-left: 5px;
+        }
+
+        .dropdown-submenu:hover > .submenu {
+            display: block;
+            animation: slideInRight 0.3s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .dropdown-submenu .submenu .dropdown-item {
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-submenu .submenu .dropdown-item:hover {
+            background: #f8f9fa;
+            color: #667eea;
+            padding-left: 25px;
+        }
+
+        .dropdown-submenu .submenu .dropdown-item i {
+            width: 20px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .dropdown-submenu .submenu .badge {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            margin-left: auto;
+        }
+
+        /* Categories Dropdown Custom Scrollbar */
+        .dropdown-menu-categories::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .dropdown-menu-categories::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .dropdown-menu-categories::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .dropdown-menu-categories::-webkit-scrollbar-thumb:hover {
+            background: #764ba2;
+        }
+
+        .navbar .nav-item.dropdown .nav-link {
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .nav-item.dropdown .nav-link:hover {
+            color: #667eea !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar .nav-item.dropdown .dropdown-menu {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            padding: 10px 0;
+            margin-top: 10px;
+            animation: dropdownSlide 0.3s ease;
+        }
+
+        @keyframes dropdownSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navbar .nav-item.dropdown .dropdown-item {
+            padding: 10px 20px;
+            font-weight: 500;
+            color: #495057;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar .nav-item.dropdown .dropdown-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding-left: 25px;
+            transform: scale(1.02);
+        }
+
+        .navbar .nav-item.dropdown .dropdown-item i {
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .navbar .nav-item.dropdown .dropdown-divider {
+            margin: 8px 0;
+            border-top-color: #e9ecef;
+        }
+
+        /* Highlight navigation dropdown items on category */
+        .navbar .nav-item.dropdown:nth-child(5) .nav-link {
+            color: #fd7e14 !important;
+        }
+
+        .navbar .nav-item.dropdown:nth-child(6) .nav-link {
+            color: #20c997 !important;
+        }
+
+        .navbar .nav-item.dropdown:nth-child(7) .nav-link {
+            color: #e83e8c !important;
         }
     </style>
 </head>
@@ -506,6 +902,222 @@
                             <i class="bi bi-bell"></i> Notifications
                         </a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-list"></i> Categories
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-categories" aria-labelledby="categoriesDropdown">
+                            <!-- Projects Category -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle-custom" href="#">
+                                    <i class="bi bi-folder-fill"></i> Projects
+                                    <i class="bi bi-chevron-right float-end"></i>
+                                </a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('project', 'Personal Blog'); return false;">
+                                        <i class="bi bi-journal-code"></i> Personal Blog
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('project', 'E-commerce Site'); return false;">
+                                        <i class="bi bi-cart"></i> E-commerce Site
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('project', 'Mobile App'); return false;">
+                                        <i class="bi bi-phone"></i> Mobile App
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('project', 'Client Project'); return false;">
+                                        <i class="bi bi-briefcase"></i> Client Project
+                                    </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- GitHub Category -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle-custom" href="#">
+                                    <i class="bi bi-github"></i> GitHub
+                                    <i class="bi bi-chevron-right float-end"></i>
+                                </a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('github', 'Pull Requests'); return false;">
+                                        <i class="bi bi-git"></i> Pull Requests <span class="badge bg-primary">3</span>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('github', 'Issues'); return false;">
+                                        <i class="bi bi-exclamation-circle"></i> Issues <span class="badge bg-danger">5</span>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('github', 'Code Review'); return false;">
+                                        <i class="bi bi-eye"></i> Code Review
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('github', 'Commits'); return false;">
+                                        <i class="bi bi-code-square"></i> Commits
+                                    </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Google Category -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle-custom" href="#">
+                                    <i class="bi bi-google"></i> Google
+                                    <i class="bi bi-chevron-right float-end"></i>
+                                </a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('google', 'Gmail'); return false;">
+                                        <i class="bi bi-envelope"></i> Gmail <span class="badge bg-info">12</span>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('google', 'Drive'); return false;">
+                                        <i class="bi bi-cloud"></i> Drive
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('google', 'Calendar'); return false;">
+                                        <i class="bi bi-calendar"></i> Calendar
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('google', 'Docs'); return false;">
+                                        <i class="bi bi-file-text"></i> Docs
+                                    </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Learning Category -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle-custom" href="#">
+                                    <i class="bi bi-book-fill"></i> Learning
+                                    <i class="bi bi-chevron-right float-end"></i>
+                                </a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('learning', 'Online Courses'); return false;">
+                                        <i class="bi bi-play-circle"></i> Online Courses
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('learning', 'Documentation'); return false;">
+                                        <i class="bi bi-file-earmark-text"></i> Documentation
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('learning', 'Tutorials'); return false;">
+                                        <i class="bi bi-lightbulb"></i> Tutorials
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('learning', 'Books'); return false;">
+                                        <i class="bi bi-journal-bookmark"></i> Books
+                                    </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Tools Category -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle-custom" href="#">
+                                    <i class="bi bi-tools"></i> Tools
+                                    <i class="bi bi-chevron-right float-end"></i>
+                                </a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('tools', 'VS Code'); return false;">
+                                        <i class="bi bi-code-slash"></i> VS Code
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('tools', 'Figma'); return false;">
+                                        <i class="bi bi-palette"></i> Figma
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('tools', 'Terminal'); return false;">
+                                        <i class="bi bi-terminal"></i> Terminal
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('tools', 'Database'); return false;">
+                                        <i class="bi bi-database"></i> Database
+                                    </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Personal Category -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle-custom" href="#">
+                                    <i class="bi bi-person-fill"></i> Personal
+                                    <i class="bi bi-chevron-right float-end"></i>
+                                </a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('personal', 'Exercise'); return false;">
+                                        <i class="bi bi-heart-pulse"></i> Exercise
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('personal', 'Meditation'); return false;">
+                                        <i class="bi bi-flower1"></i> Meditation
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('personal', 'Reading'); return false;">
+                                        <i class="bi bi-book-half"></i> Reading
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('personal', 'Hobbies'); return false;">
+                                        <i class="bi bi-palette2"></i> Hobbies
+                                    </a></li>
+                                </ul>
+                            </li>
+
+                            <li><hr class="dropdown-divider"></li>
+
+                            <!-- Work Category -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle-custom" href="#">
+                                    <i class="bi bi-briefcase-fill"></i> Work
+                                    <i class="bi bi-chevron-right float-end"></i>
+                                </a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('work', 'Development'); return false;">
+                                        <i class="bi bi-code-slash"></i> Development
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('work', 'Testing'); return false;">
+                                        <i class="bi bi-bug-fill"></i> Testing
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('work', 'Deployment'); return false;">
+                                        <i class="bi bi-cloud-upload-fill"></i> Deployment
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('work', 'Code Review'); return false;">
+                                        <i class="bi bi-eye-fill"></i> Code Review
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('work', 'Meeting'); return false;">
+                                        <i class="bi bi-calendar-event-fill"></i> Meeting
+                                    </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Study Category -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle-custom" href="#">
+                                    <i class="bi bi-mortarboard-fill"></i> Study
+                                    <i class="bi bi-chevron-right float-end"></i>
+                                </a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('study', 'Python Course'); return false;">
+                                        <i class="bi bi-play-circle-fill"></i> Python Course <span class="badge bg-success">New</span>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('study', 'Web Development'); return false;">
+                                        <i class="bi bi-globe"></i> Web Development
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('study', 'Data Science'); return false;">
+                                        <i class="bi bi-graph-up-arrow"></i> Data Science
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('study', 'ML/AI'); return false;">
+                                        <i class="bi bi-cpu-fill"></i> ML/AI
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('study', 'Documentation'); return false;">
+                                        <i class="bi bi-file-earmark-text-fill"></i> Documentation
+                                    </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Life Category -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle-custom" href="#">
+                                    <i class="bi bi-heart-fill"></i> Life
+                                    <i class="bi bi-chevron-right float-end"></i>
+                                </a>
+                                <ul class="dropdown-menu submenu">
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('life', 'Exercise'); return false;">
+                                        <i class="bi bi-heart-pulse-fill"></i> Exercise
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('life', 'Yoga'); return false;">
+                                        <i class="bi bi-flower1"></i> Yoga
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('life', 'Family Time'); return false;">
+                                        <i class="bi bi-house-heart-fill"></i> Family Time
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('life', 'Social'); return false;">
+                                        <i class="bi bi-people-fill"></i> Social
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="selectCategory('life', 'Relaxation'); return false;">
+                                        <i class="bi bi-peace"></i> Relaxation
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -553,6 +1165,40 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4" style="background: #f5f7fa;">
+                    <!-- Category Hover Menu Bar -->
+                    
+
+                    <!-- Menu Bar with Icons -->
+                    <div class="planner-menu-bar mb-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-2">
+                                <button class="menu-btn" onclick="previousDayPlanner()" title="Previous Day">
+                                    <i class="bi bi-chevron-left"></i> Previous
+                                </button>
+                                <button class="menu-btn menu-btn-primary" onclick="todayPlanner()" title="Today">
+                                    <i class="bi bi-calendar-day"></i> Today
+                                </button>
+                                <button class="menu-btn" onclick="nextDayPlanner()" title="Next Day">
+                                    Next <i class="bi bi-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="menu-btn" onclick="clearPlanner()" title="Clear All">
+                                    <i class="bi bi-x-circle"></i> Clear
+                                </button>
+                                <button class="menu-btn" onclick="copyYesterday()" title="Copy from Yesterday">
+                                    <i class="bi bi-clipboard"></i> Copy Yesterday
+                                </button>
+                                <button class="menu-btn" onclick="printPlanner()" title="Print">
+                                    <i class="bi bi-printer"></i> Print
+                                </button>
+                                <button class="menu-btn menu-btn-success" onclick="savePlanner()" title="Save">
+                                    <i class="bi bi-save"></i> Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="planner-container">
                         <!-- Date Selection -->
                         <div class="planner-header">
@@ -697,7 +1343,43 @@
             setInterval(updateClock, 1000);
             loadDailyUpdates();
             initializePlanner();
+            initializeSubmenus();
         });
+
+        // Initialize Category Submenus
+        function initializeSubmenus() {
+            // Handle submenu click on touch devices
+            const submenuToggles = document.querySelectorAll('.dropdown-submenu .dropdown-toggle-custom');
+
+            submenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const submenu = this.nextElementSibling;
+                    const isVisible = submenu && submenu.style.display === 'block';
+
+                    // Hide all other submenus
+                    document.querySelectorAll('.dropdown-submenu .submenu').forEach(menu => {
+                        menu.style.display = 'none';
+                    });
+
+                    // Toggle current submenu
+                    if (submenu && !isVisible) {
+                        submenu.style.display = 'block';
+                    }
+                });
+            });
+
+            // Close submenus when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown-submenu')) {
+                    document.querySelectorAll('.dropdown-submenu .submenu').forEach(menu => {
+                        menu.style.display = 'none';
+                    });
+                }
+            });
+        }
 
         // Initialize Daily Planner
         function initializePlanner() {
@@ -757,22 +1439,35 @@
                                placeholder="Task..."
                                data-time="${slot}">
                         <select class="time-slot-type" data-time="${slot}">
-                            <option value="">Type...</option>
-                            <option value="Coding">💻 Coding</option>
-                            <option value="Design">🎨 Design</option>
-                            <option value="Meeting">👥 Meeting</option>
-                            <option value="Research">📚 Research</option>
-                            <option value="Testing">🧪 Testing</option>
-                            <option value="Documentation">📝 Documentation</option>
-                            <option value="Break">☕ Break</option>
-                            <option value="Exercise">🏃 Exercise</option>
-                            <option value="Learning">🎓 Learning</option>
+                            <option value="" data-icon="">⚪ Select Type...</option>
+                            <option value="Coding" data-icon="💻">💻 Coding</option>
+                            <option value="Design" data-icon="🎨">🎨 Design</option>
+                            <option value="Meeting" data-icon="👥">👥 Meeting</option>
+                            <option value="Research" data-icon="📚">📚 Research</option>
+                            <option value="Testing" data-icon="🧪">🧪 Testing</option>
+                            <option value="Documentation" data-icon="📝">📝 Documentation</option>
+                            <option value="Break" data-icon="☕">☕ Break</option>
+                            <option value="Exercise" data-icon="🏃">🏃 Exercise</option>
+                            <option value="Learning" data-icon="🎓">🎓 Learning</option>
+                            <option value="Planning" data-icon="📋">📋 Planning</option>
+                            <option value="Bug Fix" data-icon="🐛">🐛 Bug Fix</option>
                         </select>
                     </div>
                 `;
             });
 
             container.innerHTML = html;
+
+            // Add event listeners for select dropdowns to update color
+            document.querySelectorAll('.time-slot-type').forEach(select => {
+                select.addEventListener('change', function() {
+                    if (this.value) {
+                        this.setAttribute('data-selected', this.value);
+                    } else {
+                        this.removeAttribute('data-selected');
+                    }
+                });
+            });
         }
 
         // Load Planner Data for a specific date
@@ -917,6 +1612,199 @@
                 alert('❌ Error saving planner. Please try again.');
             });
         }
+
+        // Menu Bar Functions
+        function previousDayPlanner() {
+            const dateInput = document.getElementById('planner-date');
+            const currentDate = new Date(dateInput.value);
+            currentDate.setDate(currentDate.getDate() - 1);
+            dateInput.value = currentDate.toISOString().split('T')[0];
+            loadPlannerData(dateInput.value);
+        }
+
+        function nextDayPlanner() {
+            const dateInput = document.getElementById('planner-date');
+            const currentDate = new Date(dateInput.value);
+            currentDate.setDate(currentDate.getDate() + 1);
+            dateInput.value = currentDate.toISOString().split('T')[0];
+            loadPlannerData(dateInput.value);
+        }
+
+        function todayPlanner() {
+            const dateInput = document.getElementById('planner-date');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.value = today;
+            loadPlannerData(today);
+        }
+
+        function clearPlanner() {
+            if (!confirm('❓ Clear all entries for this day? This cannot be undone.')) {
+                return;
+            }
+
+            // Clear time slots
+            document.querySelectorAll('.time-slot-input').forEach(input => {
+                input.value = '';
+            });
+            document.querySelectorAll('.time-slot-type').forEach(select => {
+                select.value = '';
+            });
+
+            // Clear priorities
+            document.querySelectorAll('#priorities-list input[type="text"]').forEach(input => {
+                input.value = '';
+            });
+            document.querySelectorAll('.priority-checkbox').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+
+            // Clear appointments
+            document.querySelectorAll('#appointments-list input[type="text"]').forEach(input => {
+                input.value = '';
+            });
+            document.querySelectorAll('#appointments-list input[type="time"]').forEach(input => {
+                input.value = '';
+            });
+            document.querySelectorAll('.appointment-checkbox').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+
+            // Clear goals and notes
+            document.getElementById('today-goals').value = '';
+            document.getElementById('today-notes').value = '';
+
+            alert('✅ All entries cleared!');
+        }
+
+        function copyYesterday() {
+            const dateInput = document.getElementById('planner-date');
+            const currentDate = new Date(dateInput.value);
+            const yesterday = new Date(currentDate);
+            yesterday.setDate(yesterday.getDate() - 1);
+            const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+            if (!confirm(`📋 Copy schedule from ${yesterdayStr}?`)) {
+                return;
+            }
+
+            fetch(`{{ url_for('main.get_planner', date_str='DATE') }}`.replace('DATE', yesterdayStr))
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.exists || data.time_slots.length === 0) {
+                        alert('❌ No schedule found for yesterday!');
+                        return;
+                    }
+
+                    // Copy time slots
+                    data.time_slots.forEach(slot => {
+                        const input = document.querySelector(`.time-slot-input[data-time="${slot.time_range}"]`);
+                        const select = document.querySelector(`.time-slot-type[data-time="${slot.time_range}"]`);
+                        if (input) input.value = slot.task;
+                        if (select) select.value = slot.work_type;
+                    });
+
+                    // Copy priorities (uncheck them for new day)
+                    document.querySelectorAll('#priorities-list input[type="text"]').forEach((input, idx) => {
+                        const priority = data.priorities[idx];
+                        if (priority) {
+                            input.value = priority.task;
+                            const checkbox = document.querySelector(`.priority-checkbox[data-idx="${idx}"]`);
+                            if (checkbox) checkbox.checked = false; // Uncheck for new day
+                        }
+                    });
+
+                    // Copy appointments (uncheck them)
+                    document.querySelectorAll('#appointments-list input[type="text"]').forEach((input, idx) => {
+                        const appt = data.appointments[idx];
+                        if (appt) {
+                            input.value = appt.title;
+                            const timeInput = document.querySelector(`#appointments-list input[type="time"][data-idx="${idx}"]`);
+                            const checkbox = document.querySelector(`.appointment-checkbox[data-idx="${idx}"]`);
+                            if (timeInput) timeInput.value = appt.time || '';
+                            if (checkbox) checkbox.checked = false;
+                        }
+                    });
+
+                    // Don't copy goals and notes (they should be fresh for new day)
+
+                    alert('✅ Schedule copied from yesterday! Remember to save.');
+                })
+                .catch(error => {
+                    console.error('Error copying yesterday:', error);
+                    alert('❌ Error copying schedule from yesterday.');
+                });
+        }
+
+        function printPlanner() {
+            window.print();
+        }
+
+        // Category Selection Function
+        function selectCategory(category, item) {
+            const notesArea = document.getElementById('today-notes');
+            const currentText = notesArea.value;
+
+            // Format category tag
+            const tag = `[${category.toUpperCase()}] ${item}`;
+
+            // Add to notes
+            if (currentText.trim() === '') {
+                notesArea.value = `📌 ${tag}\n`;
+            } else {
+                notesArea.value = currentText + `\n📌 ${tag}\n`;
+            }
+
+            // Show notification
+            showNotification(`Added: ${tag}`, 'success');
+
+            // Scroll to notes section
+            notesArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Highlight briefly
+            notesArea.style.border = '2px solid #667eea';
+            setTimeout(() => {
+                notesArea.style.border = '2px solid #dee2e6';
+            }, 1000);
+        }
+
+        // Show notification
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} position-fixed`;
+            notification.style.cssText = `
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+                min-width: 250px;
+                animation: slideIn 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            `;
+            notification.innerHTML = `
+                <i class="bi bi-check-circle-fill me-2"></i>
+                ${message}
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+
+        // Add animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(400px); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(400px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
 
         // Update modal date/time
         setInterval(function() {
